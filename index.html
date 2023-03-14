@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>SaM FE Internship</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/beige.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<section>
+						<h2>
+							SaM Solutions
+							<br />
+							Frontend Internship
+						</h2>
+						<span>
+							Yan Malashonak
+							<br />Dec 2022&mdash;Mar 2023
+						</span>
+					</section>
+					<section>
+						<p>Contents:</p>
+						<ul>
+							<li>Takeaways summary</li>
+							<li>
+								<span>Final app overview</span>
+								<ul class="fragment">
+									<li>Use case diagram</li>
+									<li>App architecture</li>
+									<li>Selected tech solutions</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Key takeaways</h2>
+					</section>
+					<section>Vanilla JS in TDD context</section>
+					<section>Advanced TypeScript</section>
+					<section>
+						<p>React</p>
+						<ul>
+							<li>Building UI components from scratch</li>
+							<li>Working with forms (Formik & Yup)</li>
+							<li>Render props pattern</li>
+							<li>Layered architecture</li>
+						</ul>
+					</section>
+					<section>Team work & Gitlab flow</section>
+					<section>MobX<sup>NEW</sup> + ES6 classes</section>
+					<section>
+						<p>TESTS</p>
+						<ul>
+							<li>Unit tests & jest</li>
+							<li>E2E tests & cypress<sup>NEW</sup></li>
+						</ul>
+					</section>
+					<section>
+						<p>Node.js</p>
+						<ul>
+							<li>Route changes</li>
+							<li>Multer for multipart form data<sup>NEW</sup></li>
+						</ul>
+					</section>
+					<section>i18n<sup>NEW</sup></section>
+					<section>storybook<sup>NEW</sup></section>
+					<ul>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h2>App overview</h2>
+					</section>
+					<section>
+						<h3>Feature matrix</h3>
+						<table class="r-fit-text">
+							<thead>
+								<tr>
+									<th></th>
+									<th></th>
+									<th class="centered">Anonymous user</th>
+									<th class="centered">Non-admin user</th>
+									<th class="centered">Admin user</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th rowspan="9">Meetups</th>
+									<th>View list</th>
+									<td class="centered yes">✓</td>
+									<td class="centered yes">✓</td>
+									<td class="centered yes">✓</td>
+								</tr>
+								<tr>
+									<th>View item</th>
+									<td class="centered yes">✓</td>
+									<td class="centered yes">✓</td>
+									<td class="centered yes">✓</td>
+								</tr>
+								<tr>
+									<th>Create topic</th>
+									<td class="centered no">✗</td>
+									<td class="centered yes">✓</td>
+									<td class="centered yes">✓</td>
+								</tr>
+								<tr>
+									<th>Edit meetup</th>
+									<td class="centered no">✗</td>
+									<td class="centered yes">✓</td>
+									<td class="centered yes">✓</td>
+								</tr>
+								<tr>
+									<th>Approve topic</th>
+									<td class="centered no">✗</td>
+									<td class="centered no">✗</td>
+									<td class="centered yes">✓</td>
+								</tr>
+								<tr>
+									<th>Publish draft</th>
+									<td class="centered no">✗</td>
+									<td class="centered no">✗</td>
+									<td class="centered yes">✓</td>
+								</tr>
+								<tr>
+									<th>Vote/unvote</th>
+									<td class="centered no">✗</td>
+									<td class="centered yes">✓</td>
+									<td class="centered no">✗</td>
+								</tr>
+								<tr>
+									<th>Join/unjoin</th>
+									<td class="centered no">✗</td>
+									<td class="centered yes">✓</td>
+									<td class="centered no">✗</td>
+								</tr>
+								<tr>
+									<th>Delete</th>
+									<td class="centered no">✗</td>
+									<td class="centered no">✗</td>
+									<td class="centered yes">✓</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<h3>Feature matrix</h3>
+						<table class="r-fit-text">
+							<thead>
+								<tr>
+									<th></th>
+									<th></th>
+									<th class="centered">Anonymous user</th>
+									<th class="centered">Non-admin user</th>
+									<th class="centered">Admin user</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th rowspan="5">News</th>
+									<th>View list</th>
+									<td class="centered yes">✓</td>
+									<td class="centered yes">✓</td>
+									<td class="centered yes">✓</td>
+								</tr>
+								<tr>
+									<th>View item</th>
+									<td class="centered yes">✓</td>
+									<td class="centered yes">✓</td>
+									<td class="centered yes">✓</td>
+								</tr>
+								<tr>
+									<th>Create</th>
+									<td class="centered no">✗</td>
+									<td class="centered no">✗</td>
+									<td class="centered yes">✓</td>
+								</tr>
+								<tr>
+									<th>Edit</th>
+									<td class="centered no">✗</td>
+									<td class="centered no">✗</td>
+									<td class="centered yes">✓</td>
+								</tr>
+								<tr>
+									<th>Delete</th>
+									<td class="centered no">✗</td>
+									<td class="centered no">✗</td>
+									<td class="centered no">✗</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<h3>Feature matrix</h3>
+						<table class="r-fit-text">
+							<thead>
+								<tr>
+									<th></th>
+									<th></th>
+									<th class="centered">Anonymous user</th>
+									<th class="centered">Non-admin user</th>
+									<th class="centered">Admin user</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th rowspan="2">User management</th>
+									<th>Log in</th>
+									<td class="centered yes">✓</td>
+									<td class="centered no">✗</td>
+									<td class="centered no">✗</td>
+								</tr>
+								<tr>
+									<th>Log out</th>
+									<td class="centered no">✗</td>
+									<td class="centered yes">✓</td>
+									<td class="centered yes">✓</td>
+								</tr>
+								<tr>
+									<th rowspan="1">Internationalization</th>
+									<th>Change app locale</th>
+									<td class="centered yes">✓</td>
+									<td class="centered yes">✓</td>
+									<td class="centered yes">✓</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<h3>Use case diagram (UML)</h3>
+						<div class="r-stretch">
+							<img src="./assets/meetups-app-ucd.jpg" alt="use-case-diagram" />
+						</div>
+					</section>	
+				</section>
+				<section>
+					<h3>App architecture</h3>
+					<div class="r-stretch">
+						<img src="./assets/meetups-app-architecture.jpg" alt="app-architecture" />
+					</div>
+				</section>
+				<section>
+					<section>
+						<h3>Selected tech solutions</h3>
+					</section>
+					<section>
+						<h4>Reusable buttons & input fields</h4>
+						<ul>
+							<li>Passthrough HTML attributes</li>
+							<li>Render props</li>
+							<li>Generic field = label + input + helper</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Loadable class</h4>
+						<ul>
+							<li>Super class, inherited by entity classes</li>
+							<li>Load state tracking: isLoading</li>
+							<li>Error handling: isError, errors, onError</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Error handling pipeline</h4>
+						<ul>
+							<li>Custom error classes: base AppError & derived classes</li>
+							<li>onError/onAlert callback chain</li>
+							<li>Negative & positive alerts</li>
+							<li>Toast + AlertStack components</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Fetch optimizations</h4>
+						<ul>
+							<li>Stores constructed in root store, but hydrated on demand</li>
+							<li>Hydrated on startup - kept in sync thereafter</li>
+							<li>Lazy loading of meetup images</li>
+							<li>Eager loading of voted users/participants</li>
+						</ul>
+					</section>
+					<section>
+						<h4>useConfirm() hook<sup>Borrowed</sup></h4>
+						<ul>
+							<li>Custom modal dialog</li>
+							<li>Native confirm()-like API</li>
+						</ul></section>
+					<section>
+						<h4>Resizeable AlertGroup component</h4>
+						<ul>
+							<li>Refills itself on viewport width change</li>
+							<li>useResizeEffect() hook<sup>Borrowed</sup></li>
+						</ul></section>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
