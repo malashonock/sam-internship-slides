@@ -1,0 +1,25 @@
+sup {
+	font-size: 50% !important;
+	color: green;
+}
+
+.yes {
+  color: green;
+  border-bottom-color: rgb(51, 51, 51) !important;
+}
+
+.no {
+  color: red;
+  border-bottom-color: rgb(51, 51, 51) !important;
+}
+
+.centered {
+  text-align: center !important;
+}
+
+.reveal table tbody tr:last-child {
+  th,
+  td {
+    border-bottom: 1px solid rgb(51, 51, 51) !important;
+  }
+}
